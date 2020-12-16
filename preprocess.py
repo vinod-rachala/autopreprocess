@@ -13,9 +13,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_union
 from sklearn.pipeline import Pipeline,FeatureUnion
 import pyodbc 
-conn = pyodbc.connect('Driver={SQL Server};Server=DESKTOP-4L6HO2L\SQLEXPRESS;Database=reports;Trusted_Connection=yes;')# Creating Cursor   
+conn = pyodbc.connect('Driver={SQL Server};Server=DESKTOP-4L6HO2L\SQLEXPRESS;Database=reports;Trusted_Connection=yes;')# we can handle the connection according to the org security and requirement.
 cursor = conn.cursor()   
-query="select * from dbo.practice"
+query="select * from dbo.practice"     #we can parameterize the query if needed
 df=pd.read_sql(query, conn)
 df_cat=df.select_dtypes(exclude=['float64'])
 df_float=df.select_dtypes(include=['float64'])
@@ -32,8 +32,11 @@ a=columnTransformer1.fit_transform(df_float)
 b=columnTransformer.fit_transform(df_cat)
 
 c=np.hstack((a,b))
-
+/*
 try to check :
 c[1]
 array([1.95586034e+00, 1.51377590e+05, 4.43898530e+05, 1.91792060e+05,
        1.00000000e+00, 0.00000000e+00, 0.00000000e+00])
+*/
+
+
