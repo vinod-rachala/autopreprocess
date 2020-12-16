@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec 15 12:06:41 2020
+
+@author: vinod
+"""
 import pandas as pd 
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder ,StandardScaler
@@ -26,9 +32,8 @@ a=columnTransformer1.fit_transform(df_float)
 b=columnTransformer.fit_transform(df_cat)
 
 c=np.hstack((a,b))
-/*
+
 try to check :
 c[1]
 array([1.95586034e+00, 1.51377590e+05, 4.43898530e+05, 1.91792060e+05,
        1.00000000e+00, 0.00000000e+00, 0.00000000e+00])
-       */
