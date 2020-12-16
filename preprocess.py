@@ -33,7 +33,7 @@ b=columnTransformer.fit_transform(df_cat)
 
 c=np.hstack((a,b))
 /*
-try to check :
+Testing:
 c[1]
 array([1.95586034e+00, 1.51377590e+05, 4.43898530e+05, 1.91792060e+05,
        1.00000000e+00, 0.00000000e+00, 0.00000000e+00])
